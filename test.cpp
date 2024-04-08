@@ -104,6 +104,11 @@ int main(int argc, char* argv[]) {
 	int count = 0;
 	int colormode = 1;
 	if(argv[1]){
+		if(argv[1] == "stop"){
+			u8g2.setPowerSave(1);
+    	    u8g2.doneI2c();
+     	    u8g2.doneUserData();
+		}
 		std::string strin(argv[1]);
 		config = read_config(strin);
 	}else{
